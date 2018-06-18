@@ -1,10 +1,12 @@
 package in.ramakant.rpg.common.utils;
 
+import in.ramakant.rpg.common.exceptions.UserInputParseException;
+
 import java.io.InputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static in.ramakant.rpg.common.utils.IntUtils.isNotBetweenZeroAndMaxExclusive;
+import static in.ramakant.rpg.common.utils.RandomIntegerUtils.isNotBetweenZeroAndMaxExclusive;
 
 public class InputParser {
     private static final int MAX_RETRY = 5;
@@ -32,10 +34,6 @@ public class InputParser {
 
     public int tryReadingInputAsInt(String message) {
         outputWriter.showMessage(message);
-        return tryReadingInputAsInt();
-    }
-
-    private int tryReadingInputAsInt() {
         return tryReadingInputAsInt(Integer.MAX_VALUE);
     }
 

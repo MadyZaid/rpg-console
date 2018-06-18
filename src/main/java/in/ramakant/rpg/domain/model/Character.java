@@ -1,12 +1,12 @@
 package in.ramakant.rpg.domain.model;
 
 import in.ramakant.rpg.common.constants.ConfigurationConstants;
+import in.ramakant.rpg.common.utils.RandomIntegerUtils;
 import in.ramakant.rpg.common.utils.ToStringBuilder;
 
 import java.io.Serializable;
 
 import static in.ramakant.rpg.common.utils.Color.*;
-import static in.ramakant.rpg.common.utils.IntUtils.randomIntInclusive;
 
 public abstract class Character implements Serializable {
     private static final long serialVersionUID = -1547755448238755247L;
@@ -47,7 +47,7 @@ public abstract class Character implements Serializable {
     }
 
     protected int calculateDamageToDeal() {
-        return randomIntInclusive(damage, damage + damageVariation * ConfigurationConstants.FIGHT_DAMAGE_VARIATION_MULTIPLIER);
+        return RandomIntegerUtils.getRandomIntInclusive(damage, damage + damageVariation * ConfigurationConstants.FIGHT_DAMAGE_VARIATION_MULTIPLIER);
     }
 
     public void die() {

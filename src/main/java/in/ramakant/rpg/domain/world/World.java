@@ -1,5 +1,6 @@
 package in.ramakant.rpg.domain.world;
 
+import in.ramakant.rpg.common.utils.RandomIntegerUtils;
 import in.ramakant.rpg.common.utils.ToStringBuilder;
 import in.ramakant.rpg.domain.exception.ExplorationException;
 import in.ramakant.rpg.domain.model.Enemy;
@@ -7,7 +8,6 @@ import in.ramakant.rpg.domain.model.Medic;
 import in.ramakant.rpg.domain.model.NPC;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;
-import in.ramakant.rpg.domain.world.location.LocationType;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
 import in.ramakant.rpg.persistence.dto.MedicConfiguration;
 import in.ramakant.rpg.persistence.dto.RealmConfiguration;
@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static in.ramakant.rpg.common.utils.IntUtils.isNotBetweenZeroAndMaxExclusive;
-import static in.ramakant.rpg.common.utils.IntUtils.randomIntExclusive;
+import static in.ramakant.rpg.common.utils.RandomIntegerUtils.isNotBetweenZeroAndMaxExclusive;
+import static in.ramakant.rpg.common.utils.RandomIntegerUtils.getRandomIntExclusive;
 
 public class World implements Serializable {
     private static final long serialVersionUID = 5441241162354372279L;
@@ -38,8 +38,8 @@ public class World implements Serializable {
     }
 
     static Coordinates randomCoordinates(int mapSize) {
-        int randomX = randomIntExclusive(mapSize);
-        int randomY = randomIntExclusive(mapSize);
+        int randomX = RandomIntegerUtils.getRandomIntExclusive(mapSize);
+        int randomY = RandomIntegerUtils.getRandomIntExclusive(mapSize);
         return new Coordinates(randomX, randomY);
     }
 

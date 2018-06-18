@@ -2,7 +2,7 @@ package in.ramakant.rpg;
 
 import in.ramakant.rpg.common.context.DependencyContainer;
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
-import in.ramakant.rpg.common.utils.UserInputParseException;
+import in.ramakant.rpg.common.exceptions.UserInputParseException;
 import in.ramakant.rpg.ui.MainMenuManager;
 
 public class Application {

@@ -5,7 +5,6 @@ import in.ramakant.rpg.domain.world.location.LocationType;
 
 /**
  * NPC = Non Player Character
- * all variables loaded from some external configuration
  */
 public abstract class NPC extends Character {
     private static final long serialVersionUID = 2466275918667512445L;

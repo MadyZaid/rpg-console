@@ -1,6 +1,7 @@
 package in.ramakant.rpg.persistence;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
+import in.ramakant.rpg.common.utils.RandomIntegerUtils;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
 import in.ramakant.rpg.persistence.dto.MedicConfiguration;
 import in.ramakant.rpg.persistence.dto.RealmConfiguration;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-import static in.ramakant.rpg.common.utils.IntUtils.randomIntInclusive;
+import static in.ramakant.rpg.common.utils.RandomIntegerUtils.getRandomIntInclusive;
 
 public class SerializationRealmConfigurationGenerator {
     public static void main(String[] args) throws ConfigurationException {
@@ -99,12 +100,12 @@ public class SerializationRealmConfigurationGenerator {
 
     private static EnemyConfiguration someDragon() {
         return buildEnemy("Beholder", "One eye monster", "Let me eat you!",
-                randomIntInclusive(50, 250), randomIntInclusive(8, 13), randomIntInclusive(2));
+                getRandomIntInclusive(50, 250), getRandomIntInclusive(8, 13), RandomIntegerUtils.getRandomIntInclusive(2));
     }
 
     private static EnemyConfiguration someLannister() {
         return buildEnemy("Lannister", "Lannisters always pays their debt!", "Die you son of a poor!",
-                randomIntInclusive(50, 250), randomIntInclusive(8, 13), randomIntInclusive(2));
+                getRandomIntInclusive(50, 250), getRandomIntInclusive(8, 13), RandomIntegerUtils.getRandomIntInclusive(2));
     }
 
     public static RealmConfiguration buildRealmConfiguration(String name,

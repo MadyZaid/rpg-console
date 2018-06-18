@@ -8,11 +8,7 @@ import java.io.Serializable;
 
 public class Medic extends NPC implements Serializable {
     private static final long serialVersionUID = 8584663183441712027L;
-
-    public Medic(String name, String description, String greeting, int healthSupply) {
-        super(name, description, greeting, healthSupply, 0, 0);
-    }
-
+    
     public Medic(MedicConfiguration medicConfiguration) {
         super(medicConfiguration.getName(), medicConfiguration.getDescription(), medicConfiguration.getGreeting(), medicConfiguration.getHealthSupply(), 0, 0);
     }

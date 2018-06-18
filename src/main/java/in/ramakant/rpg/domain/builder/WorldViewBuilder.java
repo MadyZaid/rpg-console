@@ -29,7 +29,7 @@ public class WorldViewBuilder extends GameInfoBuilder<WorldViewBuilder> {
         return mapView();
     }
 
-    String mapView() {
+    private String mapView() {
         StringBuilder sb = new StringBuilder();
         Location[][] map = world.getMap();
 

@@ -1,8 +1,5 @@
 package in.ramakant.rpg.common.utils;
 
-/**
- * simplified version of apache-commons-lang
- */
 public class StringUtils {
 
     private StringUtils() {
