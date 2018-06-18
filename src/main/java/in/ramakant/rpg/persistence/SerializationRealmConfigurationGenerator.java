@@ -27,63 +27,62 @@ public class SerializationRealmConfigurationGenerator {
 
     public static ArrayList<RealmConfiguration> realms() {
         ArrayList<RealmConfiguration> realmConfigurations = new ArrayList<>();
-        realmConfigurations.add(gta2Realm());
-        realmConfigurations.add(lotrRealm());
+        realmConfigurations.add(gotRealm());
+        realmConfigurations.add(dungeonsRealm());
         return realmConfigurations;
     }
 
-    public static RealmConfiguration lotrRealm() {
-
+    public static RealmConfiguration dungeonsRealm() {
         List<EnemyConfiguration> enemies = new ArrayList<>();
-        enemies.add(buildEnemy("Sauron", 300, 13, 5));
-        enemies.add(buildEnemy("Balrog", 200, 12, 3));
-        enemies.add(buildEnemy("Saruman", 200, 13, 0));
-        enemies.add(buildEnemy("Gollum", 30, 3, 0));
-        enemies.add(buildEnemy("Nazgul", 150, 6, 5));
-        enemies.add(buildEnemy("Melkor", 90, 7, 3));
-        enemies.add(buildEnemy("Witch-king of Angmar", 60, 7, 2));
-        enemies.add(buildEnemy("Smaug", 250, 15, 2));
+        enemies.add(buildEnemy("Druid", 300, 13, 5));
+        enemies.add(buildEnemy("Iggwilv", 200, 12, 3));
+        enemies.add(buildEnemy("Tiamat", 200, 13, 0));
+        enemies.add(buildEnemy("Warduke", 30, 3, 0));
+        enemies.add(buildEnemy("Lolth", 150, 6, 5));
+        enemies.add(buildEnemy("Rary", 90, 7, 3));
+        enemies.add(buildEnemy("Jarlaxle", 60, 7, 2));
+        enemies.add(buildEnemy("Mordenkainen\n", 250, 15, 2));
 
         List<MedicConfiguration> medics = new ArrayList<>();
 
         medics.add(buildMedic("Jhon", 100));
         medics.add(buildMedic("Alex", 150));
 
-        return buildRealmConfiguration("Lord of the rings",
-                15,
-                SerializationRealmConfigurationGenerator::someUrukHai,
+        return buildRealmConfiguration("Dungeons and Dragons",
+                10,
+                SerializationRealmConfigurationGenerator::someDragon,
                 enemies,
                 medics
         );
     }
 
-    public static RealmConfiguration gta2Realm() {
+    public static RealmConfiguration gotRealm() {
 
         List<EnemyConfiguration> enemies = new ArrayList<>();
-        enemies.add(buildEnemy("Johnny Zoo", 300, 15));
-        enemies.add(buildEnemy("Trey Welsh", 200, 14));
-        enemies.add(buildEnemy("Elmo", 250, 13));
-        enemies.add(buildEnemy("Billy Bob Bean", 150, 12));
-        enemies.add(buildEnemy("Dr. LaBrat", 170, 10));
-        enemies.add(buildEnemy("Red Valdez", 120, 8));
-        enemies.add(buildEnemy("Jerkov", 80, 6));
-        enemies.add(buildEnemy("Sunbeam", 60, 4));
-        enemies.add(buildEnemy("Uno Carb", 20, 2));
+        enemies.add(buildEnemy("Gregor Clegane", 300, 15));
+        enemies.add(buildEnemy("The Night King", 200, 14));
+        enemies.add(buildEnemy("Jaime Lannister", 250, 13));
+        enemies.add(buildEnemy("Stannis Baratheon", 150, 12));
+        enemies.add(buildEnemy("Euron Greyjoy", 170, 10));
+        enemies.add(buildEnemy("Craster", 120, 8));
+        enemies.add(buildEnemy("Warlocks", 80, 6));
+        enemies.add(buildEnemy("Orell", 60, 4));
+        enemies.add(buildEnemy("Olly", 20, 2));
 
         List<MedicConfiguration> medics = new ArrayList<>();
 
-        medics.add(buildMedic("Jhon", 100));
-        medics.add(buildMedic("Alex", 150));
+        medics.add(buildMedic("Melisandre", 150));
+        medics.add(buildMedic("Myranda", 100));
 
-        return buildRealmConfiguration("Grand Theft Auto",
-                14,
-                SerializationRealmConfigurationGenerator::someGangster,
+        return buildRealmConfiguration("Game Of Thrones",
+                10,
+                SerializationRealmConfigurationGenerator::someLannister,
                 enemies,
                 medics);
     }
 
     public static MedicConfiguration buildMedic(String name, int healthSupply) {
-        return new MedicConfiguration(name, "Medic to supply health", "Let me help you!", healthSupply);
+        return new MedicConfiguration(name, "Medic to supply health", "Taken health from " + name, healthSupply);
     }
 
     public static EnemyConfiguration buildEnemy(String name, int hp, int damage) {
@@ -98,13 +97,13 @@ public class SerializationRealmConfigurationGenerator {
         return new EnemyConfiguration(name, desc, greeting, hp, damage, dmgVariation);
     }
 
-    private static EnemyConfiguration someUrukHai() {
-        return buildEnemy("Uruk-Hai Warriors", "Wandering Uruk-Hai patrol", "WAAAAAAAGH!",
+    private static EnemyConfiguration someDragon() {
+        return buildEnemy("Beholder", "One eye monster", "Let me eat you!",
                 randomIntInclusive(50, 250), randomIntInclusive(8, 13), randomIntInclusive(2));
     }
 
-    private static EnemyConfiguration someGangster() {
-        return buildEnemy("Gangsters", "Thugs looking for some trouble", "Give me your wallet or DIE!",
+    private static EnemyConfiguration someLannister() {
+        return buildEnemy("Lannister", "Lannisters always pays their debt!", "Die you son of a poor!",
                 randomIntInclusive(50, 250), randomIntInclusive(8, 13), randomIntInclusive(2));
     }
 

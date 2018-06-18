@@ -2,6 +2,7 @@ package in.ramakant.rpg.common.utils;
 
 import in.ramakant.rpg.persistence.SerializationRealmConfigurationGenerator;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
+import in.ramakant.rpg.persistence.dto.MedicConfiguration;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -69,12 +70,25 @@ public class AsciiGenerator {
         SerializationRealmConfigurationGenerator.realms()
                 .forEach(realm -> realm.getEnemies()
                         .forEach(AsciiGenerator::generateAsciiArtAndSaveToFile));
+
+        SerializationRealmConfigurationGenerator.realms()
+                .forEach(realm -> realm.getMedics()
+                        .forEach(AsciiGenerator::generateAsciiArtAndSaveToFile));
     }
 
     private static void generateAsciiArtAndSaveToFile(EnemyConfiguration enemy) {
         try {
             String asciiArt = generateFromString(enemy.getName());
             ExternalIO.stringToFile(asciiArt, resourcesPath() + ASCII_ART_FOLDER, enemy.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateAsciiArtAndSaveToFile(MedicConfiguration medic) {
+        try {
+            String asciiArt = generateFromString(medic.getName());
+            ExternalIO.stringToFile(asciiArt, resourcesPath() + ASCII_ART_FOLDER, medic.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
