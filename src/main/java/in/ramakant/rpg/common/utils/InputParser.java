@@ -26,14 +26,6 @@ public class InputParser {
         return scanner.nextLine();
     }
 
-    public int tryReadingMenuChoice(String message, int optionsSize) {
-        outputWriter.showMessage(message);
-        return tryReadingMenuChoice(optionsSize);
-    }
-
-    /*
-     * menu choice is specific, because menu items are numbered from 1, not from 0.
-     */
     public int tryReadingMenuChoice(int optionsSize) {
         return tryReadingInputAsInt(optionsSize + 1) - 1;
     }
@@ -43,16 +35,11 @@ public class InputParser {
         return tryReadingInputAsInt();
     }
 
-    public int tryReadingInputAsInt() {
+    private int tryReadingInputAsInt() {
         return tryReadingInputAsInt(Integer.MAX_VALUE);
     }
 
-    public int tryReadingInputAsInt(String message, int optionsSize) {
-        outputWriter.showMessage(message);
-        return tryReadingInputAsInt(optionsSize);
-    }
-
-    public int tryReadingInputAsInt(int optionsSize) {
+    private int tryReadingInputAsInt(int optionsSize) {
         for (int i = 1; i <= MAX_RETRY; i++) {
             try {
                 return readInt(optionsSize);
@@ -68,7 +55,7 @@ public class InputParser {
         return -1;
     }
 
-    int readInt(int optionsSize) {
+    private int readInt(int optionsSize) {
         try {
             int result = Integer.parseInt(scanner.nextLine());
             if (isNotBetweenZeroAndMaxExclusive(result, optionsSize)) {

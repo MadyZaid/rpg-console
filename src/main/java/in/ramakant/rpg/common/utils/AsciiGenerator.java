@@ -66,7 +66,7 @@ public class AsciiGenerator {
         return input.length() * (FONT_SIZE - 6) + 3;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         SerializationRealmConfigurationGenerator.realms()
                 .forEach(realm -> realm.getEnemies()
                         .forEach(AsciiGenerator::generateAsciiArtAndSaveToFile));
