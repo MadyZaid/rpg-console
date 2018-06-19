@@ -1,7 +1,7 @@
-package in.ramakant.rpg.domain.builder;
+package in.ramakant.rpg.builder;
 
 import in.ramakant.rpg.common.utils.ToStringBuilder;
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 
 public class StatisticsBuilder extends GameInfoBuilder<StatisticsBuilder> {

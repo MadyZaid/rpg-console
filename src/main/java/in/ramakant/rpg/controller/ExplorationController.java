@@ -1,12 +1,12 @@
-package in.ramakant.rpg.domain.service;
+package in.ramakant.rpg.controller;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.common.utils.AsciiArtLoader;
 import in.ramakant.rpg.domain.exception.ExplorationException;
 import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
-import in.ramakant.rpg.domain.model.Medic;
-import in.ramakant.rpg.domain.model.NPC;
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Medic;
+import in.ramakant.rpg.domain.character.NPC;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;
@@ -17,19 +17,19 @@ import in.ramakant.rpg.ui.menu.ExplorationMenu;
 import in.ramakant.rpg.ui.menu.item.ExplorationMenuItem;
 
 import static in.ramakant.rpg.common.constants.StaticMessages.GAME_SAVED;
-import static in.ramakant.rpg.domain.builder.LegendBuilder.buildLegend;
-import static in.ramakant.rpg.domain.builder.StatisticsBuilder.buildStatistics;
-import static in.ramakant.rpg.domain.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.builder.LegendBuilder.buildLegend;
+import static in.ramakant.rpg.builder.StatisticsBuilder.buildStatistics;
+import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
 import static in.ramakant.rpg.domain.exception.Victory.victory;
 
-public class ExplorationService {
+public class ExplorationController {
     private final GameStateProvider gameStateProvider;
     private final ExplorationMenu explorationMenu;
     private final AllMenus allMenus;
     private final World world;
     private final Player player;
 
-    ExplorationService(GameStateProvider gameStateProvider, AllMenus allMenus, World world, Player player) {
+    ExplorationController(GameStateProvider gameStateProvider, AllMenus allMenus, World world, Player player) {
         this.gameStateProvider = gameStateProvider;
         this.explorationMenu = allMenus.explorationMenu();
         this.allMenus = allMenus;
@@ -122,7 +122,7 @@ public class ExplorationService {
     }
 
     private void fight(Location newLocation) {
-        new FightService(allMenus.fightMenu(), allMenus.beforeFightMenu(), world, player, newLocation).fight();
+        new FightController(allMenus.fightMenu(), allMenus.beforeFightMenu(), world, player, newLocation).fight();
     }
 
     private void moveToEmptySpace(Location newLocation) {

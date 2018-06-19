@@ -19,12 +19,12 @@ public class CliPlayerConfigurationMenu extends CliMenuBase<String> implements P
 
         PlayerConfiguration.PlayerConfigurationBuilder playerConfigurationBuilder = PlayerConfiguration.builder(questions.getMaxBonusPoints());
         playerConfigurationBuilder.withName(inputParser.readUserInputAsString(questions.getNameQuestion()));
-        playerConfigurationBuilder.withDesc(inputParser.readUserInputAsString(questions.getDescQuestion()));
+        playerConfigurationBuilder.withDescription(inputParser.readUserInputAsString(questions.getDescQuestion()));
 
         do {
             try {
                 showMessage(questions.getBonusStatsDescription());
-                playerConfigurationBuilder.withHpBonus(inputParser.tryReadingInputAsInt(questions.getBonusStatsBonusHpQuestion()));
+                playerConfigurationBuilder.withHealthBonus(inputParser.tryReadingInputAsInt(questions.getBonusStatsBonusHpQuestion()));
                 playerConfigurationBuilder.withDamageBonus(inputParser.tryReadingInputAsInt(questions.getBonusStatsBonusDanageQuestion()));
                 playerConfigurationBuilder.withDamageVariationBonus(inputParser.tryReadingInputAsInt(questions.getBonusStatsBonusDanageVariationQuestion()));
 

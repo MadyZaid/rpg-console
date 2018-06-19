@@ -1,6 +1,6 @@
 package in.ramakant.rpg.persistence.dto;
 
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 
 import java.io.Serializable;

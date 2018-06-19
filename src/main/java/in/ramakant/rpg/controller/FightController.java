@@ -1,9 +1,9 @@
-package in.ramakant.rpg.domain.service;
+package in.ramakant.rpg.controller;
 
 import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
-import in.ramakant.rpg.domain.model.Character;
-import in.ramakant.rpg.domain.model.NPC;
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Character;
+import in.ramakant.rpg.domain.character.NPC;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;
@@ -17,7 +17,7 @@ import static in.ramakant.rpg.common.utils.ColorFormatter.red;
 import static in.ramakant.rpg.common.utils.ColorFormatter.yellow;
 import static in.ramakant.rpg.ui.menu.item.FightMenuItem.FLEE;
 
-public class FightService {
+public class FightController {
     private static final String ATTACK_MESSAGE = "%s attacked for %s damage.";
 
     private final FightMenu fightMenu;
@@ -27,7 +27,7 @@ public class FightService {
     private final Coordinates newCoordinates;
     private final NPC npc;
 
-    FightService(FightMenu fightMenu, BeforeFightMenu beforeFightMenu, World world, Player player, Location fightLocation) {
+    FightController(FightMenu fightMenu, BeforeFightMenu beforeFightMenu, World world, Player player, Location fightLocation) {
         this.fightMenu = fightMenu;
         this.beforeFightMenu = beforeFightMenu;
         this.world = world;

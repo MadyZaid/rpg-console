@@ -2,12 +2,12 @@ package in.ramakant.rpg.domain.world;
 
 import in.ramakant.rpg.common.utils.RandomIntegerUtils;
 import in.ramakant.rpg.common.utils.ToStringBuilder;
+import in.ramakant.rpg.domain.character.Enemy;
+import in.ramakant.rpg.domain.character.Medic;
+import in.ramakant.rpg.domain.character.NPC;
 import in.ramakant.rpg.domain.exception.ExplorationException;
-import in.ramakant.rpg.domain.model.Enemy;
-import in.ramakant.rpg.domain.model.Medic;
-import in.ramakant.rpg.domain.model.NPC;
-import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;
+import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
 import in.ramakant.rpg.persistence.dto.MedicConfiguration;
 import in.ramakant.rpg.persistence.dto.RealmConfiguration;

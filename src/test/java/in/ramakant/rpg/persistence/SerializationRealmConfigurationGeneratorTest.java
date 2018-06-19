@@ -1,13 +1,16 @@
 package in.ramakant.rpg.persistence;
 
+import in.ramakant.rpg.UnitTest;
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.persistence.dto.RealmConfiguration;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.List;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
+@Category(UnitTest.class)
 public class SerializationRealmConfigurationGeneratorTest {
 
     @Test

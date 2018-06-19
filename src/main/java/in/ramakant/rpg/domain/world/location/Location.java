@@ -1,7 +1,7 @@
 package in.ramakant.rpg.domain.world.location;
 
 import in.ramakant.rpg.common.utils.ToStringBuilder;
-import in.ramakant.rpg.domain.model.NPC;
+import in.ramakant.rpg.domain.character.NPC;
 
 import java.io.Serializable;
 

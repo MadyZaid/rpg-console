@@ -1,6 +1,6 @@
-package in.ramakant.rpg.domain.builder;
+package in.ramakant.rpg.builder;
 
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.domain.world.location.Location;
 import in.ramakant.rpg.domain.world.location.LocationType;

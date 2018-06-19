@@ -1,4 +1,4 @@
-package in.ramakant.rpg.domain.model;
+package in.ramakant.rpg.domain.character;
 
 import static in.ramakant.rpg.common.constants.StaticMessages.ENEMY_DEFEATED;
 import static in.ramakant.rpg.common.constants.StaticMessages.LEVEL_UP;
@@ -17,7 +17,7 @@ public enum ExperienceStatus {
 
     public static ExperienceStatus fromLevelDiff(int levelDiff) {
         for (ExperienceStatus experienceStatus : ExperienceStatus.values()) {
-            if (experienceStatus.ordinal() == levelDiff) {
+            if (levelDiff == experienceStatus.ordinal()) {
                 return experienceStatus;
             }
         }

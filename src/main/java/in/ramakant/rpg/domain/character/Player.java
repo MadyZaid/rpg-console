@@ -1,4 +1,4 @@
-package in.ramakant.rpg.domain.model;
+package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.common.constants.ConfigurationConstants;
 import in.ramakant.rpg.common.utils.ToStringBuilder;
@@ -18,7 +18,7 @@ public class Player extends Character {
     }
 
     public Player(PlayerConfiguration conf, Coordinates initialCoordinates) {
-        this(conf.getName(), conf.getDesc(), conf.getHpBonus(), conf.getDamageBonus(), conf.getDamageVariationBonus(), initialCoordinates);
+        this(conf.getName(), conf.getDesc(), conf.getHealthBonus(), conf.getDamageBonus(), conf.getDamageVariationBonus(), initialCoordinates);
     }
 
     public Coordinates up() {

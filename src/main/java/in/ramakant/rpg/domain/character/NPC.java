@@ -1,4 +1,4 @@
-package in.ramakant.rpg.domain.model;
+package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.common.utils.Color;
 import in.ramakant.rpg.domain.world.location.LocationType;

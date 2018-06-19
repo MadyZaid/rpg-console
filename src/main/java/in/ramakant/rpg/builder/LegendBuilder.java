@@ -1,4 +1,4 @@
-package in.ramakant.rpg.domain.builder;
+package in.ramakant.rpg.builder;
 
 import in.ramakant.rpg.domain.world.location.LocationType;
 

@@ -1,10 +1,10 @@
-package in.ramakant.rpg.domain.service;
+package in.ramakant.rpg.controller;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.domain.exception.LoadGameException;
 import in.ramakant.rpg.domain.exception.PlayerDied;
 import in.ramakant.rpg.domain.exception.Victory;
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.persistence.GameStateProvider;
 import in.ramakant.rpg.persistence.dto.GameState;
@@ -18,16 +18,16 @@ import in.ramakant.rpg.ui.menu.WorldConfigurationMenu;
 import java.util.List;
 
 import static in.ramakant.rpg.common.constants.StaticMessages.*;
-import static in.ramakant.rpg.domain.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
 
-public class GameService {
+public class GameController {
 
     private final GameStateProvider gameStateProvider;
     private final AllMenus allMenus;
     private final World world;
     private final Player player;
 
-    private GameService(GameStateProvider gameStateProvider, AllMenus allMenus, List<RealmConfiguration> realmConfig) throws ConfigurationException {
+    private GameController(GameStateProvider gameStateProvider, AllMenus allMenus, List<RealmConfiguration> realmConfig) throws ConfigurationException {
         this.gameStateProvider = gameStateProvider;
         this.allMenus = allMenus;
 
@@ -35,7 +35,7 @@ public class GameService {
         this.player = initPlayer();
     }
 
-    private GameService(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
+    private GameController(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
         this.gameStateProvider = gameStateProvider;
         this.allMenus = allMenus;
 
@@ -48,13 +48,13 @@ public class GameService {
     }
 
     public static void newGame(GameStateProvider gameStateProvider, AllMenus allMenus, List<RealmConfiguration> realmConfig) throws ConfigurationException {
-        GameService gameService = new GameService(gameStateProvider, allMenus, realmConfig);
+        GameController gameService = new GameController(gameStateProvider, allMenus, realmConfig);
         gameService.startGame();
     }
 
     public static void loadGame(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
         try {
-            GameService gameService = new GameService(gameStateProvider, allMenus);
+            GameController gameService = new GameController(gameStateProvider, allMenus);
             gameService.startGame();
         } catch (LoadGameException e) {
             allMenus.mainMenu().showMessage(e.getMessage());
@@ -87,9 +87,9 @@ public class GameService {
     private void startGame() throws ConfigurationException {
         MainMenu mainMenu = allMenus.mainMenu();
 
-        ExplorationService explorationService = new ExplorationService(gameStateProvider, allMenus, world, player);
+        ExplorationController explorationController = new ExplorationController(gameStateProvider, allMenus, world, player);
         try {
-            explorationService.startExploring();
+            explorationController.startExploring();
         } catch (Victory | PlayerDied e) {
             mainMenu.showMessage(e.getMessage());
         }

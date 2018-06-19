@@ -1,6 +1,6 @@
 package in.ramakant.rpg.domain.exception;
 
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 
 import static in.ramakant.rpg.common.constants.StaticMessages.VICTORY;

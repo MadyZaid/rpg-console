@@ -1,12 +1,12 @@
 package in.ramakant.rpg.common.constants;
 
-import in.ramakant.rpg.domain.model.Player;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.ui.QuestionsToPlayer;
 
 import static in.ramakant.rpg.common.utils.ColorFormatter.*;
-import static in.ramakant.rpg.domain.builder.LegendBuilder.buildLegend;
-import static in.ramakant.rpg.domain.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.builder.LegendBuilder.buildLegend;
+import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
 
 //TODO: Move all these messages into messages.properties for localization support. May be in a json file
 public interface StaticMessages {

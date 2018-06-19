@@ -5,7 +5,7 @@ import in.ramakant.rpg.common.utils.ToStringBuilder;
 import static in.ramakant.rpg.common.utils.ColorFormatter.*;
 
 public enum LocationType {
-    EMPTY("Nothing is here", " "),
+    EMPTY("No one is here", " "),
     MEDIC("A medic who can give you some health", green("M")),
     ENEMY("An Enemy", red("E")),
     PLAYER("The Player", underlinedBlue("P")),

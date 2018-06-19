@@ -2,7 +2,7 @@ package in.ramakant.rpg.ui;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
-import in.ramakant.rpg.domain.service.GameService;
+import in.ramakant.rpg.controller.GameController;
 import in.ramakant.rpg.persistence.GameStateProvider;
 import in.ramakant.rpg.persistence.RealmConfigurationProvider;
 import in.ramakant.rpg.ui.menu.MainMenu;
@@ -32,10 +32,10 @@ public class MainMenuManager {
 
             switch (choice) {
                 case START:
-                    GameService.newGame(gameStateProvider, allMenus, configurationProvider.load());
+                    GameController.newGame(gameStateProvider, allMenus, configurationProvider.load());
                     break;
                 case LOAD:
-                    GameService.loadGame(gameStateProvider, allMenus);
+                    GameController.loadGame(gameStateProvider, allMenus);
                     break;
                 case EXIT:
                     mainMenu.showMessage("Come back soon! :)");

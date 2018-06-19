@@ -9,14 +9,14 @@ import static in.ramakant.rpg.common.utils.ColorFormatter.red;
 public class PlayerConfiguration {
     private final String name;
     private final String desc;
-    private final int hpBonus;
+    private final int healthBonus;
     private final int damageBonus;
     private final int damageVariationBonus;
 
     private PlayerConfiguration(String name, String desc, int hpBonus, int damageBonus, int damageVariationBonus) {
         this.name = name;
         this.desc = desc;
-        this.hpBonus = hpBonus;
+        this.healthBonus = hpBonus;
         this.damageBonus = damageBonus;
         this.damageVariationBonus = damageVariationBonus;
     }
@@ -33,8 +33,8 @@ public class PlayerConfiguration {
         return desc;
     }
 
-    public int getHpBonus() {
-        return hpBonus;
+    public int getHealthBonus() {
+        return healthBonus;
     }
 
     public int getDamageBonus() {
@@ -63,12 +63,12 @@ public class PlayerConfiguration {
             return this;
         }
 
-        public PlayerConfigurationBuilder withDesc(String desc) {
+        public PlayerConfigurationBuilder withDescription(String desc) {
             this.desc = desc;
             return this;
         }
 
-        public PlayerConfigurationBuilder withHpBonus(int hpBonus) {
+        public PlayerConfigurationBuilder withHealthBonus(int hpBonus) {
             this.hpBonus = hpBonus;
             return this;
         }

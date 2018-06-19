@@ -1,4 +1,4 @@
-package in.ramakant.rpg.domain.builder;
+package in.ramakant.rpg.builder;
 
 abstract class OutputBuilderBase {
     protected String formatDigit(int digit) {
