@@ -2,8 +2,6 @@ package in.ramakant.rpg.domain.world.location;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class LocationTest {
 
     @Test

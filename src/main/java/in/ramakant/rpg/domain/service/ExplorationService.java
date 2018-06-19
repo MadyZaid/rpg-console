@@ -23,14 +23,13 @@ import static in.ramakant.rpg.domain.builder.WorldViewBuilder.buildWorldView;
 import static in.ramakant.rpg.domain.exception.Victory.victory;
 
 public class ExplorationService {
-
     private final GameStateProvider gameStateProvider;
     private final ExplorationMenu explorationMenu;
     private final AllMenus allMenus;
     private final World world;
     private final Player player;
 
-    public ExplorationService(GameStateProvider gameStateProvider, AllMenus allMenus, World world, Player player) {
+    ExplorationService(GameStateProvider gameStateProvider, AllMenus allMenus, World world, Player player) {
         this.gameStateProvider = gameStateProvider;
         this.explorationMenu = allMenus.explorationMenu();
         this.allMenus = allMenus;
@@ -83,15 +82,15 @@ public class ExplorationService {
         }
     }
 
-    void showMap() {
+    private void showMap() {
         explorationMenu.showMap(buildWorldView(world, player));
     }
 
-    void showLegend() {
+    private void showLegend() {
         explorationMenu.showMessage(buildLegend());
     }
 
-    void travel(Coordinates coordinates) {
+    private void travel(Coordinates coordinates) {
         try {
             Location newLocation = world.getLocation(coordinates);
             if (newLocation.isAnyoneThere()) {
@@ -105,7 +104,7 @@ public class ExplorationService {
         showMap();
     }
 
-    void interactWithNpc(Location newLocation) {
+    private void interactWithNpc(Location newLocation) {
         NPC npc = newLocation.getNpc();
         explorationMenu.showMessage(AsciiArtLoader.loadIfPossible(npc.getName()));
         explorationMenu.showMessage(npc.toStringWithColors());
@@ -113,7 +112,7 @@ public class ExplorationService {
         if (npc.isEnemy()) {
             fight(newLocation);
 
-            if (world.allEnemiesDead()) {
+            if (world.areAllEnemiesDead()) {
                 victory(world, player);
             }
         } else if (npc.isMedic()) {
@@ -122,16 +121,16 @@ public class ExplorationService {
         }
     }
 
-    void fight(Location newLocation) {
+    private void fight(Location newLocation) {
         new FightService(allMenus.fightMenu(), allMenus.beforeFightMenu(), world, player, newLocation).fight();
     }
 
-    void moveToEmptySpace(Location newLocation) {
+    private void moveToEmptySpace(Location newLocation) {
         player.setCoordinates(newLocation.getCoordinates());
         explorationMenu.showMessage(newLocation.desc());
     }
 
-    void saveGame() throws ConfigurationException {
+    private void saveGame() throws ConfigurationException {
         gameStateProvider.saveGame(new GameState(world, player));
         explorationMenu.showMessage(GAME_SAVED);
     }

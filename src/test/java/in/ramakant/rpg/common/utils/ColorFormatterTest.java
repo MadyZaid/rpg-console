@@ -9,7 +9,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @Category(UnitTest.class)
 public class ColorFormatterTest {
     @Test
-    public void ColorFormatter_AssertAllFormats(){
+    public void ColorFormatter_AssertAllFormats() {
         assertThat(ColorFormatter.red("ramakant")).isEqualTo("\u001B[31mramakant\u001B[0m");
         assertThat(ColorFormatter.blue("ramakant")).isEqualTo("\u001B[34mramakant\u001B[0m");
         assertThat(ColorFormatter.green("ramakant")).isEqualTo("\u001B[32mramakant\u001B[0m");

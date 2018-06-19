@@ -9,7 +9,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @Category(UnitTest.class)
 public class ColorTest {
     @Test
-    public void Font_AssertAll(){
+    public void Font_AssertAll() {
         assertThat(Color.CLEAR_ALL_FORMATTING.number()).isEqualTo(0);
 
         assertThat(Color.BOLD.number()).isEqualTo(1);

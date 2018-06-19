@@ -9,26 +9,26 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @Category(UnitTest.class)
 public class RandomIntegerUtilsTest {
     @Test
-    public void RandomIntegerUtils_getRandomIntInclusive_ReturnsIntLessThanOrEqualToGivenNumber(){
+    public void RandomIntegerUtils_getRandomIntInclusive_ReturnsIntLessThanOrEqualToGivenNumber() {
         int result = RandomIntegerUtils.getRandomIntInclusive(5);
         assertThat(result).isBetween(0, 5);
     }
 
     @Test
-    public void RandomIntegerUtils_getRandomIntInclusive_ReturnsIntBetweenGivenNumbers(){
+    public void RandomIntegerUtils_getRandomIntInclusive_ReturnsIntBetweenGivenNumbers() {
         int result = RandomIntegerUtils.getRandomIntInclusive(5, 10);
         assertThat(result).isBetween(5, 10);
     }
 
     @Test
-    public void RandomIntegerUtils_getRandomIntExclusive_ReturnsIntLessThanGivenNumber(){
+    public void RandomIntegerUtils_getRandomIntExclusive_ReturnsIntLessThanGivenNumber() {
         int result = RandomIntegerUtils.getRandomIntExclusive(5);
         assertThat(result).isBetween(0, 4);
     }
 
     @Test
-    public void RandomIntegerUtils_getRandomIntExclusive_ReturnsIntBetweenGivenNumbers(){
-        int result = RandomIntegerUtils.getRandomIntInclusive(5, 10);
+    public void RandomIntegerUtils_getRandomIntExclusive_ReturnsIntBetweenGivenNumbersAndLessThanMax() {
+        int result = RandomIntegerUtils.getRandomIntExclusive(5, 10);
         assertThat(result).isBetween(5, 9);
     }
 }

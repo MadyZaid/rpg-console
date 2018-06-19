@@ -14,7 +14,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class DependencyContainerTest {
 
     @Test
-    public void DependencyContainer_Throws_DependencyException_IfDependencyNotFound(){
+    public void DependencyContainer_Throws_DependencyException_IfDependencyNotFound() {
         Throwable thrown = catchThrowable(() ->
                 DependencyContainer.resolve(Object.class)
         );
@@ -22,7 +22,7 @@ public class DependencyContainerTest {
     }
 
     @Test
-    public void DependencyContainer_Returns_Dependency(){
+    public void DependencyContainer_Returns_Dependency() {
         OutputWriter outputWriter = DependencyContainer.resolve(OutputWriter.class);
         assertThat(outputWriter).isNotNull();
     }

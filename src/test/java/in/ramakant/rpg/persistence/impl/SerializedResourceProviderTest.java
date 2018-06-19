@@ -2,8 +2,6 @@ package in.ramakant.rpg.persistence.impl;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class SerializedResourceProviderTest {
 
     @Test

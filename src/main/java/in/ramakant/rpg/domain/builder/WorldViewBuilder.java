@@ -76,5 +76,4 @@ public class WorldViewBuilder extends GameInfoBuilder<WorldViewBuilder> {
     private void appendLocationMark(StringBuilder sb, Location location) {
         sb.append(formatLocationMark(location.mapMark()));
     }
-
 }

@@ -27,7 +27,7 @@ public class FightService {
     private final Coordinates newCoordinates;
     private final NPC npc;
 
-    public FightService(FightMenu fightMenu, BeforeFightMenu beforeFightMenu, World world, Player player, Location fightLocation) {
+    FightService(FightMenu fightMenu, BeforeFightMenu beforeFightMenu, World world, Player player, Location fightLocation) {
         this.fightMenu = fightMenu;
         this.beforeFightMenu = beforeFightMenu;
         this.world = world;
@@ -88,10 +88,9 @@ public class FightService {
         }
     }
 
-    private int attack(Character attacker, Character defender) {
+    private void attack(Character attacker, Character defender) {
         int damageDealt = attacker.attack(defender);
         showAttackMessage(attacker, damageDealt);
-        return damageDealt;
     }
 
     private void showAttackMessage(Character attacker, int attackedFor) {

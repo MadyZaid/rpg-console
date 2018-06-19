@@ -2,8 +2,6 @@ package in.ramakant.rpg.domain.world;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class WorldTest {
 
     @Test

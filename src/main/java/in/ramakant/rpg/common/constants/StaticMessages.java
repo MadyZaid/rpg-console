@@ -8,7 +8,7 @@ import static in.ramakant.rpg.common.utils.ColorFormatter.*;
 import static in.ramakant.rpg.domain.builder.LegendBuilder.buildLegend;
 import static in.ramakant.rpg.domain.builder.WorldViewBuilder.buildWorldView;
 
-//TODO: Move all these messages into messages.properties for localization support
+//TODO: Move all these messages into messages.properties for localization support. May be in a json file
 public interface StaticMessages {
     String ENEMY_DEFEATED = "Defeating this enemy gave you %d experience points. ";
     String LEVEL_UP = "You earned enough experience points to " + boldMagenta("level up") + " your player! ";

@@ -24,7 +24,6 @@ public class GameService {
 
     private final GameStateProvider gameStateProvider;
     private final AllMenus allMenus;
-
     private final World world;
     private final Player player;
 
@@ -36,7 +35,7 @@ public class GameService {
         this.player = initPlayer();
     }
 
-    public GameService(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
+    private GameService(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
         this.gameStateProvider = gameStateProvider;
         this.allMenus = allMenus;
 
@@ -49,21 +48,20 @@ public class GameService {
     }
 
     public static void newGame(GameStateProvider gameStateProvider, AllMenus allMenus, List<RealmConfiguration> realmConfig) throws ConfigurationException {
-        GameService gameManager = new GameService(gameStateProvider, allMenus, realmConfig);
-        gameManager.startGame();
+        GameService gameService = new GameService(gameStateProvider, allMenus, realmConfig);
+        gameService.startGame();
     }
 
     public static void loadGame(GameStateProvider gameStateProvider, AllMenus allMenus) throws ConfigurationException {
         try {
-            GameService gameManager = new GameService(gameStateProvider, allMenus);
-            gameManager.startGame();
+            GameService gameService = new GameService(gameStateProvider, allMenus);
+            gameService.startGame();
         } catch (LoadGameException e) {
             allMenus.mainMenu().showMessage(e.getMessage());
         }
-
     }
 
-    private World initWorld(List<RealmConfiguration> realmConfigs) throws ConfigurationException {
+    private World initWorld(List<RealmConfiguration> realmConfigs) {
         WorldConfigurationMenu worldConfigMenu = allMenus.worldConfigMenu();
 
         RealmConfiguration realmConfig = worldConfigMenu.chooseConfiguration(REALM_QUESTION, realmConfigs);
@@ -86,12 +84,12 @@ public class GameService {
         return player;
     }
 
-    void startGame() throws ConfigurationException {
+    private void startGame() throws ConfigurationException {
         MainMenu mainMenu = allMenus.mainMenu();
 
-        ExplorationService explorationManager = new ExplorationService(gameStateProvider, allMenus, world, player);
+        ExplorationService explorationService = new ExplorationService(gameStateProvider, allMenus, world, player);
         try {
-            explorationManager.startExploring();
+            explorationService.startExploring();
         } catch (Victory | PlayerDied e) {
             mainMenu.showMessage(e.getMessage());
         }

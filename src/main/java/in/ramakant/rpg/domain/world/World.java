@@ -18,10 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 import static in.ramakant.rpg.common.utils.RandomIntegerUtils.isNotBetweenZeroAndMaxExclusive;
-import static in.ramakant.rpg.common.utils.RandomIntegerUtils.getRandomIntExclusive;
 
 public class World implements Serializable {
-    private static final long serialVersionUID = 5441241162354372279L;
+    private static final long serialVersionUID = -9218747271522361869L;
 
     private final String name;
     private final Map<Coordinates, Enemy> enemies;
@@ -37,10 +36,56 @@ public class World implements Serializable {
         this.initWorld(realmConfiguration.getEnemies(), realmConfiguration.getMedics());
     }
 
-    static Coordinates randomCoordinates(int mapSize) {
+    private static Coordinates randomCoordinates(int mapSize) {
         int randomX = RandomIntegerUtils.getRandomIntExclusive(mapSize);
         int randomY = RandomIntegerUtils.getRandomIntExclusive(mapSize);
         return new Coordinates(randomX, randomY);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Location[][] getMap() {
+        return map;
+    }
+
+    public Map<Coordinates, Enemy> getEnemies() {
+        return enemies;
+    }
+
+    public boolean areAllEnemiesDead() {
+        return getAllAliveEnemies() == 0;
+    }
+
+    public long getAllAliveEnemies() {
+        return enemies.values().stream().filter(Enemy::isAlive).count();
+    }
+
+    public Coordinates randomCoordinatesWithoutAnyone() {
+        Coordinates coordinates;
+
+        do {
+            coordinates = randomCoordinates(map.length);
+        } while (someoneIsThere(coordinates));
+
+        return coordinates;
+    }
+
+    public Location getLocation(Coordinates coordinates) throws ExplorationException {
+        return getLocation(coordinates.getX(), coordinates.getY());
+    }
+
+    public void setLocation(Coordinates coordinates, Location location) {
+        map[coordinates.getX()][coordinates.getY()] = location;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.defaultBuilder(this)
+                .append("name", name)
+                .append("mapSize", mapSize())
+                .build();
     }
 
     private void initWorld(List<EnemyConfiguration> enemyConfiguration,
@@ -97,29 +142,11 @@ public class World implements Serializable {
         return new Location(coordinates);
     }
 
-    public Coordinates randomCoordinatesWithoutAnyone() {
-        Coordinates coordinates;
-
-        do {
-            coordinates = randomCoordinates(map.length);
-        } while (someoneIsThere(coordinates));
-
-        return coordinates;
-    }
-
     private boolean someoneIsThere(Coordinates coordinates) {
         return enemies.containsKey(coordinates) || medics.containsKey(coordinates);
     }
 
-    public Location getLocation(Coordinates coordinates) throws ExplorationException {
-        return getLocation(coordinates.getX(), coordinates.getY());
-    }
-
-    public void setLocation(Coordinates coordinates, Location location) {
-        map[coordinates.getX()][coordinates.getY()] = location;
-    }
-
-    public Location getLocation(int x, int y) throws ExplorationException {
+    private Location getLocation(int x, int y) throws ExplorationException {
         validateCoordinates(x, y);
         return map[x][y];
     }
@@ -135,35 +162,7 @@ public class World implements Serializable {
         }
     }
 
-    public boolean allEnemiesDead() {
-        return aliveEnemiesLeft() == 0;
-    }
-
-    public long aliveEnemiesLeft() {
-        return enemies.values().stream().filter(Enemy::isAlive).count();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Location[][] getMap() {
-        return map;
-    }
-
-    public Map<Coordinates, Enemy> getEnemies() {
-        return enemies;
-    }
-
-    public int mapSize() {
+    private int mapSize() {
         return map.length;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.defaultBuilder(this)
-                .append("name", name)
-                .append("mapSize", mapSize())
-                .build();
     }
 }
