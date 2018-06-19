@@ -6,13 +6,11 @@ public class GameServiceTest {
 
     @Test
     public void newGame() {
+        //TODO : need to write console based unit tests using application runner
     }
 
     @Test
     public void loadGame() {
-    }
-
-    @Test
-    public void startGame() {
+        //TODO : need to write console based unit tests using application runner
     }
 }

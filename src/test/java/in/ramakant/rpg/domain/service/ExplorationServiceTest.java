@@ -6,33 +6,6 @@ public class ExplorationServiceTest {
 
     @Test
     public void startExploring() {
-    }
-
-    @Test
-    public void showMap() {
-    }
-
-    @Test
-    public void showLegend() {
-    }
-
-    @Test
-    public void travel() {
-    }
-
-    @Test
-    public void interactWithNpc() {
-    }
-
-    @Test
-    public void fight() {
-    }
-
-    @Test
-    public void moveToEmptySpace() {
-    }
-
-    @Test
-    public void saveGame() {
+        //TODO : need to write console based unit tests using application runner
     }
 }
