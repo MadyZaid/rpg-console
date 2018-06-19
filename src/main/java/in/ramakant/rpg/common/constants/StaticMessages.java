@@ -21,9 +21,7 @@ public interface StaticMessages {
 
     String REALM_CONFIRMATION_MESSAGE = "Welcome to the world of " + boldMagenta("%s") + ". \n Get ready for the action!";
 
-    String INTRODUCTION = "Hello, player.\n" +
-            "Welcome to the game! " +
-            "Please tell me something about you.";
+    String INTRODUCTION = "Please tell me something about you!";
 
     String NAME_QUESTION = "What is your name?";
     String DESC_QUESTION = "Why are you here?";
