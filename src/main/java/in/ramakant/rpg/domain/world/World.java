@@ -55,10 +55,10 @@ public class World implements Serializable {
     }
 
     public boolean areAllEnemiesDead() {
-        return getAllAliveEnemies() == 0;
+        return aliveEnemiesCount() == 0;
     }
 
-    public long getAllAliveEnemies() {
+    public long aliveEnemiesCount() {
         return enemies.values().stream().filter(Enemy::isAlive).count();
     }
 

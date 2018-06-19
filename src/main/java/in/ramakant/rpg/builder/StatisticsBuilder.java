@@ -21,7 +21,7 @@ public class StatisticsBuilder extends GameInfoBuilder<StatisticsBuilder> {
     @Override
     protected String buildInner() {
         return ToStringBuilder.fieldsWithNewlinesAndTabs(this)
-                .append("enemies left", world.getAllAliveEnemies() + "/" + world.getEnemies().size())
+                .append("enemies left", world.aliveEnemiesCount() + "/" + world.getEnemies().size())
                 .append("", player.toStringWithColors())
                 .build();
     }
