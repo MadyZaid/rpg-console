@@ -10,4 +10,5 @@ public interface PropertyKeyConstants {
     String BASE_HEALTH = "BASE_HEALTH";
     String BASE_DAMAGE = "BASE_DAMAGE";
     String BASE_DAMAGE_VARIATION = "BASE_DAMAGE_VARIATION";
+    String NO_OF_ENEMIES="NO_OF_ENEMIES";
 }

@@ -5,12 +5,11 @@ import java.io.*;
 public class ApplicationRunner {
 
     private PipedOutputStream pipedOutputStream;
-    private PipedInputStream pipedInputStream;
     private ByteArrayOutputStream outputStream;
 
     public ApplicationRunner() throws IOException {
         pipedOutputStream = new PipedOutputStream();
-        pipedInputStream = new PipedInputStream(pipedOutputStream);
+        PipedInputStream pipedInputStream = new PipedInputStream(pipedOutputStream);
         System.setIn(pipedInputStream);
 
         outputStream = new ByteArrayOutputStream();

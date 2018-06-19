@@ -12,4 +12,5 @@ public interface ConfigurationConstants {
     int BASE_HEALTH = Integer.parseInt(PropertyProvider.getPropertyValue(PropertyKeyConstants.BASE_HEALTH));
     int BASE_DAMAGE = Integer.parseInt(PropertyProvider.getPropertyValue(PropertyKeyConstants.BASE_DAMAGE));
     int BASE_DAMAGE_VARIATION = Integer.parseInt(PropertyProvider.getPropertyValue(PropertyKeyConstants.BASE_DAMAGE_VARIATION));
+    int NO_OF_ENEMIES = Integer.parseInt(PropertyProvider.getPropertyValue(PropertyKeyConstants.NO_OF_ENEMIES));
 }

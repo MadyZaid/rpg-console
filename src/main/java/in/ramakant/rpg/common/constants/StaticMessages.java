@@ -43,7 +43,7 @@ public interface StaticMessages {
 
     String GET_AWAY_FROM_THE_FIGHT = "See you again!";
 
-    String VICTORY = bold(green(("Congratulations, %s, you WON! Forces of evil perished and %s realm is safe again.")));
+    String VICTORY = bold(green("Congratulations, %s, you WON!") + yellow(" %s ") + green("realm is safe again."));
     String DEFEAT = bold(red("You died! Try harder next time!"));
 
     String GAME_SAVED = "Game successfully saved!";

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import static in.ramakant.rpg.common.constants.ConfigurationConstants.NO_OF_ENEMIES;
 import static in.ramakant.rpg.common.utils.RandomIntegerUtils.getRandomIntInclusive;
 
 public class SerializationRealmConfigurationGenerator {
@@ -33,7 +34,7 @@ public class SerializationRealmConfigurationGenerator {
         return realmConfigurations;
     }
 
-    public static RealmConfiguration dungeonsRealm() {
+    private static RealmConfiguration dungeonsRealm() {
         List<EnemyConfiguration> enemies = new ArrayList<>();
         enemies.add(buildEnemy("Druid", 300, 13, 5));
         enemies.add(buildEnemy("Iggwilv", 200, 12, 3));
@@ -50,14 +51,13 @@ public class SerializationRealmConfigurationGenerator {
         medics.add(buildMedic("Alex", 150));
 
         return buildRealmConfiguration("Dungeons and Dragons",
-                10,
                 SerializationRealmConfigurationGenerator::someDragon,
                 enemies,
                 medics
         );
     }
 
-    public static RealmConfiguration gotRealm() {
+    private static RealmConfiguration gotRealm() {
 
         List<EnemyConfiguration> enemies = new ArrayList<>();
         enemies.add(buildEnemy("Gregor Clegane", 300, 15));
@@ -76,25 +76,24 @@ public class SerializationRealmConfigurationGenerator {
         medics.add(buildMedic("Myranda", 100));
 
         return buildRealmConfiguration("Game Of Thrones",
-                10,
                 SerializationRealmConfigurationGenerator::someLannister,
                 enemies,
                 medics);
     }
 
-    public static MedicConfiguration buildMedic(String name, int healthSupply) {
+    private static MedicConfiguration buildMedic(String name, int healthSupply) {
         return new MedicConfiguration(name, "Medic to supply health", "Taken health from " + name, healthSupply);
     }
 
-    public static EnemyConfiguration buildEnemy(String name, int hp, int damage) {
+    private static EnemyConfiguration buildEnemy(String name, int hp, int damage) {
         return buildEnemy(name, hp, damage, damage / 5);
     }
 
-    public static EnemyConfiguration buildEnemy(String name, int hp, int damage, int dmgVariation) {
+    private static EnemyConfiguration buildEnemy(String name, int hp, int damage, int dmgVariation) {
         return buildEnemy(name, "empty for now", "I'll crush you like an insect!", hp, damage, dmgVariation);
     }
 
-    public static EnemyConfiguration buildEnemy(String name, String desc, String greeting, int hp, int damage, int dmgVariation) {
+    private static EnemyConfiguration buildEnemy(String name, String desc, String greeting, int hp, int damage, int dmgVariation) {
         return new EnemyConfiguration(name, desc, greeting, hp, damage, dmgVariation);
     }
 
@@ -108,20 +107,19 @@ public class SerializationRealmConfigurationGenerator {
                 getRandomIntInclusive(50, 250), getRandomIntInclusive(8, 13), RandomIntegerUtils.getRandomIntInclusive(2));
     }
 
-    public static RealmConfiguration buildRealmConfiguration(String name,
-                                                             int numberOFRandomEnemies,
-                                                             Supplier<EnemyConfiguration> enemySupplier,
-                                                             List<EnemyConfiguration> definedEnemies,
-                                                             List<MedicConfiguration> medics) {
-        List<EnemyConfiguration> enemies = randomEnemies(numberOFRandomEnemies, enemySupplier);
+    private static RealmConfiguration buildRealmConfiguration(String name,
+                                                              Supplier<EnemyConfiguration> enemySupplier,
+                                                              List<EnemyConfiguration> definedEnemies,
+                                                              List<MedicConfiguration> medics) {
+        List<EnemyConfiguration> enemies = randomEnemies(enemySupplier);
         enemies.addAll(definedEnemies);
 
         return new RealmConfiguration(name, enemies.size() - 10, enemies, medics);
     }
 
-    private static List<EnemyConfiguration> randomEnemies(int numberOFRandomEnemies, Supplier<EnemyConfiguration> enemySupplier) {
+    private static List<EnemyConfiguration> randomEnemies(Supplier<EnemyConfiguration> enemySupplier) {
         List<EnemyConfiguration> randomEnemies = new ArrayList<>();
-        for (int i = 0; i < numberOFRandomEnemies; i++) {
+        for (int i = 0; i < NO_OF_ENEMIES; i++) {
             randomEnemies.add(enemySupplier.get());
         }
         return randomEnemies;

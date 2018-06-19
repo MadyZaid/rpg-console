@@ -1,10 +1,14 @@
 package in.ramakant.rpg;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.io.IOException;
 
+@Category(UnitTest.class)
+@Ignore
 public class ApplicationTest {
 
     private ApplicationRunner applicationRunner = new ApplicationRunner();
@@ -14,6 +18,7 @@ public class ApplicationTest {
 
     @Test
     public void applicationAsksForUserMoveAndThenMakesOwnMove() throws InterruptedException, ConfigurationException {
+
         applicationRunner.startGame();
         applicationRunner.hasDisplayed("\u001B[1m\u001B[35m\n" +
                 "Welcome to the Dungeons!\u001B[0m\u001B[0m\n" +
