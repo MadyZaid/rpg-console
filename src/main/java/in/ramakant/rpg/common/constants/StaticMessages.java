@@ -4,9 +4,9 @@ import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.ui.QuestionsToPlayer;
 
-import static in.ramakant.rpg.common.utils.ColorFormatter.*;
 import static in.ramakant.rpg.builder.LegendBuilder.buildLegend;
 import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.common.utils.ColorFormatter.*;
 
 //TODO: Move all these messages into messages.properties for localization support. May be in a json file
 public interface StaticMessages {
@@ -52,6 +52,7 @@ public interface StaticMessages {
 
     String CONFIG_ERROR = "There was a problem with the configuration. Please check the configurations.";
     String UNEXPECTED_ERROR = "There was a unexpected problem. Please try again.";
+    String WRONG_OPTION = "You have chosen a wrong option, please try again";
 
     static QuestionsToPlayer questionsToPlayer() {
         return QuestionsToPlayer.builder()

@@ -13,8 +13,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void applicationAsksForUserMoveAndThenMakesOwnMove() throws InterruptedException, ConfigurationException
-    {
+    public void applicationAsksForUserMoveAndThenMakesOwnMove() throws InterruptedException, ConfigurationException {
         applicationRunner.startGame();
         applicationRunner.hasDisplayed("\u001B[1m\u001B[35m\n" +
                 "Welcome to the Dungeons!\u001B[0m\u001B[0m\n" +

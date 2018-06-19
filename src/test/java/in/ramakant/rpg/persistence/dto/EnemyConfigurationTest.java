@@ -13,7 +13,7 @@ public class EnemyConfigurationTest {
     private EnemyConfiguration enemyConfiguration;
 
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         enemyConfiguration = new EnemyConfiguration("test", "test", "test", 100, 5, 2);
     }
 

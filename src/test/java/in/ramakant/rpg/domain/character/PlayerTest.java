@@ -2,10 +2,6 @@ package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.UnitTest;
 import in.ramakant.rpg.domain.exception.PlayerDied;
-import in.ramakant.rpg.domain.character.Enemy;
-import in.ramakant.rpg.domain.character.Experience;
-import in.ramakant.rpg.domain.character.Medic;
-import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.persistence.dto.MedicConfiguration;
 import in.ramakant.rpg.persistence.dto.PlayerConfiguration;

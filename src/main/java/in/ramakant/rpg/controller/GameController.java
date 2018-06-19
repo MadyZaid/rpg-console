@@ -1,10 +1,10 @@
 package in.ramakant.rpg.controller;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
+import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.exception.LoadGameException;
 import in.ramakant.rpg.domain.exception.PlayerDied;
 import in.ramakant.rpg.domain.exception.Victory;
-import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.persistence.GameStateProvider;
 import in.ramakant.rpg.persistence.dto.GameState;
@@ -17,8 +17,8 @@ import in.ramakant.rpg.ui.menu.WorldConfigurationMenu;
 
 import java.util.List;
 
-import static in.ramakant.rpg.common.constants.StaticMessages.*;
 import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.common.constants.StaticMessages.*;
 
 public class GameController {
 

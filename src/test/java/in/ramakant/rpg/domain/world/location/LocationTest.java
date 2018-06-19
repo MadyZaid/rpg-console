@@ -28,7 +28,7 @@ public class LocationTest {
         medic = new Medic(medicConfiguration);
         enemyLocation = new Location(new Coordinates(5, 5), enemy);
         medicLocation = new Location(new Coordinates(1, 1), medic);
-        emptyLocation = new Location(new Coordinates(2,2));
+        emptyLocation = new Location(new Coordinates(2, 2));
     }
 
     @Test

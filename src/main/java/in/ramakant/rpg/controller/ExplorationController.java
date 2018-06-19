@@ -2,11 +2,11 @@ package in.ramakant.rpg.controller;
 
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.common.utils.AsciiArtLoader;
-import in.ramakant.rpg.domain.exception.ExplorationException;
-import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.domain.character.Medic;
 import in.ramakant.rpg.domain.character.NPC;
 import in.ramakant.rpg.domain.character.Player;
+import in.ramakant.rpg.domain.exception.ExplorationException;
+import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;
@@ -16,10 +16,10 @@ import in.ramakant.rpg.ui.AllMenus;
 import in.ramakant.rpg.ui.menu.ExplorationMenu;
 import in.ramakant.rpg.ui.menu.item.ExplorationMenuItem;
 
-import static in.ramakant.rpg.common.constants.StaticMessages.GAME_SAVED;
 import static in.ramakant.rpg.builder.LegendBuilder.buildLegend;
 import static in.ramakant.rpg.builder.StatisticsBuilder.buildStatistics;
 import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
+import static in.ramakant.rpg.common.constants.StaticMessages.GAME_SAVED;
 import static in.ramakant.rpg.domain.exception.Victory.victory;
 
 public class ExplorationController {

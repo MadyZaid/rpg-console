@@ -1,7 +1,6 @@
 package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.UnitTest;
-import in.ramakant.rpg.domain.character.Enemy;
 import in.ramakant.rpg.domain.world.location.LocationType;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
 import org.junit.Before;
@@ -18,7 +17,7 @@ public class NPCTest {
     private Enemy enemy;
 
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         enemy = new Enemy(Mockito.mock(EnemyConfiguration.class));
     }
 

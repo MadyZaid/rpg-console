@@ -2,8 +2,8 @@ package in.ramakant.rpg.ui;
 
 import in.ramakant.rpg.common.constants.StaticMessages;
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
-import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.controller.GameController;
+import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.persistence.GameStateProvider;
 import in.ramakant.rpg.persistence.RealmConfigurationProvider;
 import in.ramakant.rpg.ui.menu.MainMenu;

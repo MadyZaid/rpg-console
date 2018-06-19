@@ -1,5 +1,6 @@
 package in.ramakant.rpg.ui.menu.impl;
 
+import in.ramakant.rpg.common.constants.StaticMessages;
 import in.ramakant.rpg.common.utils.InputParser;
 import in.ramakant.rpg.common.utils.OutputWriter;
 import in.ramakant.rpg.ui.ExplorationMenuToStringFormatter;
@@ -31,7 +32,7 @@ public class CliExplorationMenu extends CliEnumMenuBase<ExplorationMenuItem> imp
     protected ExplorationMenuItem readUserChoice() {
         ExplorationMenuItem choice = ExplorationMenuItem.fromString(inputParser.readUserInputAsString());
         if (choice == null) {
-            showMessage("You have chosen a wrong option, please try again");
+            showMessage(StaticMessages.WRONG_OPTION);
             return ExplorationMenuItem.COMMANDS;
         }
 

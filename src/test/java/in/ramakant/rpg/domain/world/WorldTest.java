@@ -36,15 +36,15 @@ public class WorldTest {
     }
 
     @Test
-    public void World_getLocation() throws ExplorationException{
+    public void World_getLocation() throws ExplorationException {
         Location location = world.getLocation(world.randomCoordinatesWithoutAnyone());
         assertThat(location).isNotNull();
     }
 
     @Test
-    public void World_getLocation_ThrowExplorationException() throws ExplorationException{
-        Throwable thrown = catchThrowable(()->
-                world.getLocation(new Coordinates(50,50))
+    public void World_getLocation_ThrowExplorationException() throws ExplorationException {
+        Throwable thrown = catchThrowable(() ->
+                world.getLocation(new Coordinates(50, 50))
         );
         assertThat(thrown).isInstanceOf(ExplorationException.class);
     }

@@ -1,9 +1,9 @@
 package in.ramakant.rpg.controller;
 
-import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.domain.character.Character;
 import in.ramakant.rpg.domain.character.NPC;
 import in.ramakant.rpg.domain.character.Player;
+import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.domain.world.World;
 import in.ramakant.rpg.domain.world.location.Coordinates;
 import in.ramakant.rpg.domain.world.location.Location;

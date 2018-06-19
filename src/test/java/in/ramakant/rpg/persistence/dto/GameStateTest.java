@@ -16,8 +16,9 @@ public class GameStateTest {
     GameState gameState;
     World world;
     Player player;
+
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         world = Mockito.mock(World.class);
         player = Mockito.mock(Player.class);
         gameState = new GameState(world, player);

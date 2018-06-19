@@ -2,8 +2,6 @@ package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.UnitTest;
 import in.ramakant.rpg.common.utils.Color;
-import in.ramakant.rpg.domain.character.Enemy;
-import in.ramakant.rpg.domain.character.Player;
 import in.ramakant.rpg.domain.world.location.LocationType;
 import in.ramakant.rpg.persistence.dto.EnemyConfiguration;
 import org.junit.Before;
@@ -19,83 +17,83 @@ public class EnemyTest {
     Enemy enemy;
 
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         enemy = new Enemy("test", "test", "test", 100, 15, 2);
     }
 
     @Test
-    public void Enemy_fromEnemyConfiguration(){
+    public void Enemy_fromEnemyConfiguration() {
         Enemy enemyFromConfiguration = new Enemy(Mockito.mock(EnemyConfiguration.class));
         assertThat(enemyFromConfiguration).isNotNull();
     }
 
     @Test
-    public void Enemy_getName(){
+    public void Enemy_getName() {
         assertThat(enemy.getName()).isEqualTo("test");
     }
 
     @Test
-    public void Enemy_getDescription(){
+    public void Enemy_getDescription() {
         assertThat(enemy.getDescription()).isEqualTo("test");
     }
 
     @Test
-    public void Enemy_getMaxHealth(){
+    public void Enemy_getMaxHealth() {
         assertThat(enemy.getMaxHealth()).isEqualTo(100);
     }
 
     @Test
-    public void Enemy_getDamage(){
+    public void Enemy_getDamage() {
         assertThat(enemy.getDamage()).isEqualTo(15);
     }
 
     @Test
-    public void Enemy_getCurrentHealth(){
+    public void Enemy_getCurrentHealth() {
         assertThat(enemy.getCurrentHealth()).isGreaterThanOrEqualTo(0);
     }
 
     @Test
-    public void Enemy_getDamageVariation(){
+    public void Enemy_getDamageVariation() {
         assertThat(enemy.getDamageVariation()).isEqualTo(2);
     }
 
     @Test
-    public void Enemy_greeting(){
+    public void Enemy_greeting() {
         assertThat(enemy.greeting()).isEqualTo("\u001B[31mtest\u001B[0m");
     }
 
     @Test
-    public void Enemy_locationType(){
+    public void Enemy_locationType() {
         assertThat(enemy.locationType()).isEqualTo(LocationType.ENEMY);
     }
 
     @Test
-    public void Enemy_getExpReward(){
+    public void Enemy_getExpReward() {
         assertThat(enemy.getExpReward()).isEqualTo(100);
     }
 
     @Test
-    public void Enemy_attack(){
+    public void Enemy_attack() {
         assertThat(enemy.attack(Mockito.mock(Player.class))).isGreaterThanOrEqualTo(15);
     }
 
     @Test
-    public void Enemy_isAlive(){
+    public void Enemy_isAlive() {
         assertThat(enemy.isAlive()).isTrue();
     }
 
     @Test
-    public void Enemy_isEnemy(){
+    public void Enemy_isEnemy() {
         assertThat(enemy.isEnemy()).isTrue();
     }
 
     @Test
-    public void Enemy_isMedic(){
+    public void Enemy_isMedic() {
         assertThat(enemy.isMedic()).isFalse();
     }
 
     @Test
-    public void Enemy_currentStatus(){
+    public void Enemy_currentStatus() {
         assertThat(enemy.currentStatus()).isEqualTo("\n" +
                 "Enemy current status is: \n" +
                 "\tname: \u001B[33mtest\u001B[0m\n" +
@@ -105,12 +103,12 @@ public class EnemyTest {
     }
 
     @Test
-    public void Enemy_isDead(){
+    public void Enemy_isDead() {
         assertThat(enemy.isDead()).isFalse();
     }
 
     @Test
-    public void Enemy_toString(){
+    public void Enemy_toString() {
         assertThat(enemy.toString()).isEqualTo("\tname: test\n" +
                 "\tdescription: test\n" +
                 "\thealth: 100/100\n" +
@@ -118,7 +116,7 @@ public class EnemyTest {
     }
 
     @Test
-    public void Enemy_toStringWithColors(){
+    public void Enemy_toStringWithColors() {
         assertThat(enemy.toStringWithColors()).isEqualTo("\tname: \u001B[33mtest\u001B[0m\n" +
                 "\tdescription: \u001B[0mtest\u001B[0m\n" +
                 "\thealth: \u001B[32m100/100\u001B[0m\n" +

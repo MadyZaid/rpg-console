@@ -14,14 +14,14 @@ public class PlayerConfigurationTest {
     private PlayerConfiguration playerConfiguration;
 
     @Before
-    public void dataSetup() throws PlayerValidationException{
+    public void dataSetup() throws PlayerValidationException {
         playerConfiguration = PlayerConfiguration.builder(5)
                 .withName("test")
-        .withDescription("test")
-        .withHealthBonus(1)
-        .withDamageBonus(2)
-        .withDamageVariationBonus(2)
-        .build();
+                .withDescription("test")
+                .withHealthBonus(1)
+                .withDamageBonus(2)
+                .withDamageVariationBonus(2)
+                .build();
     }
 
     @Test

@@ -19,7 +19,7 @@ public class SerializationRealmConfigurationGeneratorTest {
     }
 
     @Test
-    public void SerializationRealmConfigurationGenerator_generateRealms() throws ConfigurationException{
+    public void SerializationRealmConfigurationGenerator_generateRealms() throws ConfigurationException {
         SerializationRealmConfigurationGenerator.generateRealms();
     }
 

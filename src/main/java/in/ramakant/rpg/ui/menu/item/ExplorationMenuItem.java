@@ -1,19 +1,20 @@
 package in.ramakant.rpg.ui.menu.item;
 
+import in.ramakant.rpg.common.constants.MenuConstants;
 import in.ramakant.rpg.common.utils.ToStringBuilder;
 
 public enum ExplorationMenuItem {
-    UP("W", "Go North"),
-    DOWN("S", "Go South"),
-    LEFT("A", "Go West"),
-    RIGHT("D", "Go East"),
-    COMMANDS("1", "Show this menu"),
-    MAP("2", "Show map"),
-    LEGEND("3", "Show legend"),
-    PLAYER("4", "Show player info"),
-    STATS("5", "Show statistics"),
-    SAVE("9", "Save the service"),
-    EXIT("0", "Exit to main menu");
+    UP("W", MenuConstants.GO_NORTH),
+    DOWN("S", MenuConstants.GO_SOUTH),
+    LEFT("A", MenuConstants.GO_WEST),
+    RIGHT("D", MenuConstants.GO_EAST),
+    COMMANDS("1", MenuConstants.SHOW_THIS_MENU),
+    MAP("2", MenuConstants.SHOW_MAP),
+    LEGEND("3", MenuConstants.SHOW_LEGEND),
+    PLAYER("4", MenuConstants.SHOW_PLAYER_INFO),
+    STATS("5", MenuConstants.SHOW_STATISTICS),
+    SAVE("9", MenuConstants.SAVE_THE_GAME),
+    EXIT("0", MenuConstants.EXIT);
 
     private final String keyBinding;
     private final String description;

@@ -13,7 +13,7 @@ public class MedicConfigurationTest {
     private MedicConfiguration medicConfiguration;
 
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         medicConfiguration = new MedicConfiguration("test", "test", "test", 100);
     }
 

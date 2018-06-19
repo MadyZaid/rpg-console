@@ -1,8 +1,6 @@
 package in.ramakant.rpg.domain.character;
 
 import in.ramakant.rpg.UnitTest;
-import in.ramakant.rpg.domain.character.Experience;
-import in.ramakant.rpg.domain.character.ExperienceStatus;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -15,7 +13,7 @@ public class ExperienceTest {
     private Experience experience;
 
     @Before
-    public void dataSetup(){
+    public void dataSetup() {
         experience = new Experience();
     }
 
