@@ -1,5 +1,6 @@
 package in.ramakant.rpg;
 
+import in.ramakant.rpg.common.constants.StaticMessages;
 import in.ramakant.rpg.common.context.DependencyContainer;
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.common.exceptions.UserInputParseException;
@@ -17,11 +18,11 @@ public class Application {
             if (e.getMessage() != null) {
                 shutdown(e.getMessage(), e);
             } else {
-                String msg = "There was a problem with the configuration. Please check the configurations.";
+                String msg = StaticMessages.CONFIG_ERROR;
                 shutdown(msg, e);
             }
         } catch (Throwable t) {
-            String msg = "There was a unexpected problem. Please try again.";
+            String msg = StaticMessages.UNEXPECTED_ERROR;
             shutdown(msg, t);
         }
     }

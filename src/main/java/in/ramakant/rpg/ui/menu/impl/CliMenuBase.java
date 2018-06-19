@@ -1,5 +1,6 @@
 package in.ramakant.rpg.ui.menu.impl;
 
+import in.ramakant.rpg.common.constants.StaticMessages;
 import in.ramakant.rpg.common.utils.InputParser;
 import in.ramakant.rpg.common.utils.OutputWriter;
 import in.ramakant.rpg.domain.exception.GameException;
@@ -26,9 +27,6 @@ public abstract class CliMenuBase<T> implements BaseMenu<T> {
         this.menuFormatter = menuFormatter();
     }
 
-    /**
-     * can be overridden to change how menu looks like
-     */
     protected MenuToStringFormatter<T> menuFormatter() {
         return new MenuToStringFormatter<>();
     }
@@ -54,10 +52,10 @@ public abstract class CliMenuBase<T> implements BaseMenu<T> {
 
     public void printAllOptions() {
         if (menuItems == null) {
-            throw new GameException("Menu badly initialized, please contact the creator. Shutting down...");
+            throw new GameException(StaticMessages.BAD_MENU);
         }
 
-        outputWriter.showMessageWithSpace("Please choose one of those options:");
+        outputWriter.showMessageWithSpace(StaticMessages.CHOOSE_OPTION);
         for (int i = 0; i < menuItems.size(); i++) {
             outputWriter.showMessage(formatMessage(menuItems.get(i), i));
         }

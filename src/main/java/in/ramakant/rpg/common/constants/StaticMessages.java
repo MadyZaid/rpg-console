@@ -10,15 +10,19 @@ import static in.ramakant.rpg.builder.WorldViewBuilder.buildWorldView;
 
 //TODO: Move all these messages into messages.properties for localization support. May be in a json file
 public interface StaticMessages {
+    String WELCOME = "\nWelcome to the Dungeons!";
+    String COME_BACK = "Come back soon! :)";
+    String CHOOSE_OPTION = "Select an option below:";
+    String BAD_MENU = "Bad menu! Shutting down...";
     String ENEMY_DEFEATED = "Defeating this enemy gave you %d experience points. ";
     String LEVEL_UP = "You earned enough experience points to " + boldMagenta("level up") + " your player! ";
 
     String REALM_QUESTION = "In which realm would you like to begin your journey?";
 
-    String REALM_CONFIRMATION_MESSAGE = boldMagenta("%s") + ". \n Get ready for the action! Best of luck!";
+    String REALM_CONFIRMATION_MESSAGE = "Welcome to the world of " + boldMagenta("%s") + ". \n Get ready for the action!";
 
     String INTRODUCTION = "Hello, player.\n" +
-            "Welcome to the game " +
+            "Welcome to the game! " +
             "Please tell me something about you.";
 
     String NAME_QUESTION = "What is your name?";
@@ -31,15 +35,14 @@ public interface StaticMessages {
     String BONUS_STATS_DMG_QUESTION = "How much would you like to keep for " + yellow("bonus damage") + "? (base = " + ConfigurationConstants.BASE_DAMAGE + ")";
     String BONUS_STATS_DMG_VAR_QUESTION = "How much would you like to keep for " + yellow("bonus damage variation") + "? (base = " + ConfigurationConstants.BASE_DAMAGE_VARIATION + ")";
 
-    String GREETING = boldMagenta("Wow, %s") + ", you have some amazing origin story.\n" +
+    String GREETING = "Below is your current status " +
             "%s\n" +
-            "You will fit perfectly in the world of " + boldMagenta("%s") +
-            "\n\n" +
+            "Use your skills carefully to defeat all enemies in the world of " + boldMagenta("%s\n") +
+            "Go to a " + green("medic") + " if you need to take some health.\n" +
             "Here, have a " + blue("map") + ". You'll be able to use it whenever you feel lost!\n" +
             "%s\n" +
             "%s";
 
-    String TRAVEL_INFO = "You just traveled and you find that... ";
     String GET_AWAY_FROM_THE_FIGHT = "See you again!";
 
     String VICTORY = bold(green(("Congratulations, %s, you WON! Forces of evil perished and %s realm is safe again.")));
@@ -48,6 +51,9 @@ public interface StaticMessages {
     String GAME_SAVED = "Game successfully saved!";
     String GAME_LOADING_FAILED = "Could not load service state";
     String GAME_LOADED = "Welcome again! Here, let me remind you where you were";
+
+    String CONFIG_ERROR = "There was a problem with the configuration. Please check the configurations.";
+    String UNEXPECTED_ERROR = "There was a unexpected problem. Please try again.";
 
     static QuestionsToPlayer questionsToPlayer() {
         return QuestionsToPlayer.builder()

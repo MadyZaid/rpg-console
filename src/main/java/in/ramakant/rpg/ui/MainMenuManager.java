@@ -1,5 +1,6 @@
 package in.ramakant.rpg.ui;
 
+import in.ramakant.rpg.common.constants.StaticMessages;
 import in.ramakant.rpg.common.exceptions.ConfigurationException;
 import in.ramakant.rpg.domain.exception.ShouldNeverHappen;
 import in.ramakant.rpg.controller.GameController;
@@ -27,7 +28,7 @@ public class MainMenuManager {
     public void showMenu() throws ConfigurationException {
         MainMenuItem choice;
         do {
-            mainMenu.showMessage(boldMagenta("\nWelcome to my simple role play game"));
+            mainMenu.showMessage(boldMagenta(StaticMessages.WELCOME));
             choice = mainMenu.showMenu();
 
             switch (choice) {
@@ -38,7 +39,7 @@ public class MainMenuManager {
                     GameController.loadGame(gameStateProvider, allMenus);
                     break;
                 case EXIT:
-                    mainMenu.showMessage("Come back soon! :)");
+                    mainMenu.showMessage(StaticMessages.COME_BACK);
                     break;
                 default:
                     throw new ShouldNeverHappen();
