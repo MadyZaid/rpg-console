@@ -13,7 +13,7 @@ import java.util.List;
 public abstract class SerializedResourceProvider<T> implements Repository<T> {
 
     private static final String PATH_TO_CONFIG_FILES = "config";
-    private static final String PATH_TO_SAVED_FILES = "games";
+    private static final String PATH_TO_SAVED_FILES = "saved";
 
     public static String configPath() {
         return PATH_TO_CONFIG_FILES;
