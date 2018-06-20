@@ -61,6 +61,7 @@ java -jar rpg-console-1.0-SNAPSHOT.jar
 1. Write unit tests for all the layers. Currently, I have focused mainly on Domain. Code coverage for the domain is 100% except for exception class.
 2. See how can we write BDD test cases for this console game app.
 3. Generate Xml docs in the whole project.
+4. Move all messages to common location so that later they can be consolidated for localization support.
 
 
 ## Design - 
