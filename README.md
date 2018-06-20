@@ -1,5 +1,5 @@
 # rpg-console
-A java console based role play game. For more details, please look for a wiki in this repository.
+A console based role play game in java. For more details, please look this repository wikis.
 
 Run Instructions - 
 - This is a gradle project.
