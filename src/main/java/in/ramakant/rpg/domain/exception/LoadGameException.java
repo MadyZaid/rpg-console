@@ -9,6 +9,6 @@ public class LoadGameException extends ConfigurationException {
     private static final long serialVersionUID = -6138854057620055792L;
 
     public LoadGameException(Throwable cause) {
-        super(bold(red("Failed to load service, please start a new one")), cause);
+        super(bold(red("Failed to load game, please start a new one")), cause);
     }
 }
