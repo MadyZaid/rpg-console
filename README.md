@@ -87,4 +87,4 @@ java -jar rpg-console-1.0-SNAPSHOT.jar
 ![ExplorationController](https://github.com/rbadolia/rpg-console/blob/master/Design/ExplorationController.png)
 
 ## FightController
-![ExplorationController](https://github.com/rbadolia/rpg-console/blob/master/Design/ExplorationController.png)
+![FightController](https://github.com/rbadolia/rpg-console/blob/master/Design/FightController.png)
