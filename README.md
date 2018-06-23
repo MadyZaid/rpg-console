@@ -39,7 +39,7 @@ java -jar rpg-console-1.0-SNAPSHOT.jar
 1. Tell why you want to play this game
 1. Divide bonus skill points into three characteristics - 
      1. Bonus Health (This will add to the base health),  
-     1. Bonus Damage and (This will add to the damage you cause to an enemy) 
+     1. Bonus Damage (This will add to the damage you cause to an enemy) 
      1. Bonus Damage Variation (This will add to the random damage calculation factor)
      1. My personal choice for above options can be 1, 2, 2
 * You will be shown the player statistics and a map of the realm. Have a careful look and start exploring. To move in the map simply use **A(Left)S(Down)D(Right)W(Up)**.
